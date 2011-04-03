@@ -5,7 +5,7 @@ SHOW_URL = API_URL + 'GetShowByTVDBID/%s'
 SUBTITLE_URL = API_URL + 'GetAllSubsFor/%s/%s/%s/nl'
 
 def Start():
-  HTTP.CacheTime = 1 #CACHE_1DAY
+  HTTP.CacheTime = CACHE_1HOUR
 
 class BierdopjeAgentTV(Agent.TV_Shows):
   name = 'Bierdopje'

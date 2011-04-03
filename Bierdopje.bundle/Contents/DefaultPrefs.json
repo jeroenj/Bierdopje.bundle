@@ -1,0 +1,8 @@
+[
+  {
+    "id": "ApiKey",
+    "label": "API Key",
+    "type": "text",
+    "default": "710D4D0CCA0CB0B1"
+  }
+]

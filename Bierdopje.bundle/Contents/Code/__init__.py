@@ -36,7 +36,7 @@ class BierdopjeAgentTV(Agent.TV_Shows):
                 for subtitle in subtitles:
                   filename = subtitle.xpath('filename')[0].text
                   Log('*** Subtitle found on bierdopje: %s' % filename)
-                  if p.file.find(filename) != -1:
+                  if p.file.lower().find(filename.lower()) != -1:
                     match = subtitle
                     Log('*** We found a match: %s' % filename)
                     break

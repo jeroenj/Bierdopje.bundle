@@ -41,13 +41,16 @@ class BierdopjeAgentTV(Agent.TV_Shows):
                     Log('*** We found a match: %s' % filename)
                     break
                 if match:
-                  Log('*** Will use this subtitle: %s' % match.xpath('filename')[0].text)
-                  download_link = match.xpath('downloadlink')[0].text
-                  Log('*** Download url: %s' % download_link)
-                  # We use the .srt extension by default. There is no way to see what we get back from the api.
-                  p.subtitles[Locale.Language.Dutch][download_link] = Proxy.Media(HTTP.Request(download_link), ext='srt')
+                  self.fetch(p, match)
                 else:
                   Log('*** No exact match found. Will try the most popular one now.')
-                  Log('*** TODO: Of course this should be implemented')
-              else:
+                  match = sorted(subtitles, key=lambda subtitle: int(subtitle.xpath('numdownloads')[0].text))[-1]
+                  self.fetch(p, match)
+               else:
                 Log('*** No subtitles found on bierdopje')
+
+  def fetch(self, part, subtitle):
+    Log('*** We will use this subtitle: %s' % subtitle.xpath('filename')[0].text)
+    download_link = subtitle.xpath('downloadlink')[0].text
+    # We use the .srt extension by default. There is no way to see what we get back from the api.
+    part.subtitles[Locale.Language.Dutch][download_link] = Proxy.Media(HTTP.Request(download_link), ext='srt')

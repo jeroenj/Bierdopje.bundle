@@ -4,5 +4,11 @@
     "label": "API Key",
     "type": "text",
     "default": "710D4D0CCA0CB0B1"
+  },
+  {
+    "id": "DownloadMostPopular",
+    "label": "DL most popular if no match",
+    "type": "bool",
+    "default": "false"
   }
 ]

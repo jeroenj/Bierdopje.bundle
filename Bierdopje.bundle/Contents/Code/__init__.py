@@ -42,10 +42,12 @@ class BierdopjeAgentTV(Agent.TV_Shows):
                     break
                 if match:
                   self.fetch(p, match)
-                else:
+                elif Prefs['DownloadMostPopular']:
                   Log('*** No exact match found. Will try the most popular one now.')
                   match = sorted(subtitles, key=lambda subtitle: int(subtitle.xpath('numdownloads')[0].text))[-1]
                   self.fetch(p, match)
+                else:
+                  Log('*** No matches found on bierdopje. You might check the preferences to enable more generous checking.')
               else:
                 Log('*** No subtitles found on bierdopje')
 

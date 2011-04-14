@@ -2,7 +2,7 @@ NAME = 'Bierdopje'
 
 API_URL = 'http://api.bierdopje.com/%s' % Prefs['ApiKey']
 SHOW_URL = '%s/GetShowByTVDBID/%%s' % API_URL
-SUBTITLE_URL = '%s/GetAllSubsFor/%%s/%%s/%%s/' % API_URL
+SUBTITLE_URL = '%s/GetAllSubsFor/%%s/%%s/%%s/%%s/' % API_URL
 
 def Start():
   HTTP.CacheTime = CACHE_1HOUR
@@ -30,7 +30,7 @@ class BierdopjeAgentTV(Agent.TV_Shows):
         for e in media.seasons[s].episodes:
           for i in media.seasons[s].episodes[e].items:
             for p in i.parts:
-              subtitles = XML.ElementFromURL(SUBTITLE_URL % (metadata.id, s, e)).xpath('/bierdopje/response/results/result')
+              subtitles = XML.ElementFromURL(SUBTITLE_URL % (metadata.id, s, e, Prefs['Language'])).xpath('/bierdopje/response/results/result')
               match = None
               if len(subtitles) > 0:
                 for subtitle in subtitles:

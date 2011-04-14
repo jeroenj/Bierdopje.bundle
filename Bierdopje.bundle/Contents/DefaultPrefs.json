@@ -6,6 +6,13 @@
     "default": "710D4D0CCA0CB0B1"
   },
   {
+    "id": "Language",
+    "label": "Language",
+    "type": "enum",
+    "values": ["nl", "en"],
+    "default": "nl"
+  },
+  {
     "id": "DownloadMostPopular",
     "label": "DL most popular if no match",
     "type": "bool",

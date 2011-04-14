@@ -6,6 +6,7 @@ SUBTITLE_URL = '%s/GetAllSubsFor/%%s/%%s/%%s/' % API_URL
 
 def Start():
   HTTP.CacheTime = CACHE_1HOUR
+  HTTP.Headers['User-agent'] = 'plexapp.com v9.0'
 
 class BierdopjeAgentTV(Agent.TV_Shows):
   name = 'Bierdopje'
@@ -23,7 +24,6 @@ class BierdopjeAgentTV(Agent.TV_Shows):
     ))
 
   def update(self, metadata, media, lang):
-    HTTP.Headers['User-agent'] = 'plexapp.com v9.0'
     for s in media.seasons:
       # just like in the Local Media Agent, if we have a date-based season skip for now.
       if int(s) < 1900:

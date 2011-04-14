@@ -1,8 +1,8 @@
 NAME = 'Bierdopje'
 
-API_URL = 'http://api.bierdopje.com/' + Prefs['ApiKey'] + '/'
-SHOW_URL = API_URL + 'GetShowByTVDBID/%s'
-SUBTITLE_URL = API_URL + 'GetAllSubsFor/%s/%s/%s/nl'
+API_URL = 'http://api.bierdopje.com/%s' % Prefs['ApiKey']
+SHOW_URL = '%s/GetShowByTVDBID/%%s' % API_URL
+SUBTITLE_URL = '%s/GetAllSubsFor/%%s/%%s/%%s/' % API_URL
 
 def Start():
   HTTP.CacheTime = CACHE_1HOUR

@@ -9,7 +9,7 @@
     "id": "Language",
     "label": "Language",
     "type": "enum",
-    "values": ["nl", "en"],
+    "values": ["nl", "en", "both"],
     "default": "nl"
   },
   {

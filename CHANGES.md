@@ -1,3 +1,6 @@
+# 0.0.4 (2011-04-15)
+* adds inteligent matching. It will parse release details out of the filename and match it against all available subtitles on bierdopje. It will then download the best match if there are any available.
+
 # 0.0.3 (2011-04-15)
 * removes API key from storage. This will cause duplicate subtitles for people upgrading from a previous version Thanks [@sander1](https://github.com/sander1) for the tip.
 * some small code refactoring

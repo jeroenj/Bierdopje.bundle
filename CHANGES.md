@@ -1,5 +1,5 @@
 # 0.0.3 (2011-04-15)
-* removes API key from storage. This will cause duplicate subtitles for peaople upgrading from a previous version Thanks [@sander1](https://github.com/sander1) for the tip.
+* removes API key from storage. This will cause duplicate subtitles for people upgrading from a previous version Thanks [@sander1](https://github.com/sander1) for the tip.
 * some small code refactoring
 * Adds option to download English or both Dutch and English subtitles
 

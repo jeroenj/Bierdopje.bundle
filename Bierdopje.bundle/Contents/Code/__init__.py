@@ -54,5 +54,6 @@ class BierdopjeAgentTV(Agent.TV_Shows):
   def fetch(self, part, subtitle):
     Log('*** We will use this subtitle: %s' % subtitle.xpath('filename')[0].text)
     download_link = subtitle.xpath('downloadlink')[0].text
+    key = download_link.split('/apikey/')[0]
     # We use the .srt extension by default. There is no way to see what we get back from the api.
-    part.subtitles[Locale.Language.Dutch][download_link] = Proxy.Media(HTTP.Request(download_link), ext='srt')
+    part.subtitles[Locale.Language.Dutch][key] = Proxy.Media(HTTP.Request(download_link), ext='srt')

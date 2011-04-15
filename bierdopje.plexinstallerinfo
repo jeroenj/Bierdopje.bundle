@@ -7,12 +7,12 @@
 	<key>bundlePath</key>
 	<string>/Users/jeroenjacobs/Development/python/bierdopje-agent/Bierdopje.bundle</string>
 	<key>description</key>
-	<string>This metadata agent downloads Dutch subtitles from Bierdopje.com.</string>
+	<string>This metadata agent downloads Dutch and/or English subtitles from Bierdopje.com.</string>
 	<key>identifier</key>
 	<string>com.plexapp.agents.bierdopje</string>
 	<key>name</key>
 	<string>Bierdopje</string>
 	<key>version</key>
-	<string>0.0.2</string>
+	<string>0.0.3</string>
 </dict>
 </plist>

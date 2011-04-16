@@ -70,7 +70,7 @@ class BierdopjeAgentTV(Agent.TV_Shows):
 
   def find_best_match(self, filename, subtitles):
     Log('*** Trying to find the best match')
-    filename_matches = self.regexp_matches(filename)
+    filename_matches = self.regexp_matches(filename.replace(' ', ''))
     points = {'formats': 4, 'encodings': 2, 'resolutions': 1}
     scores = []
     for subtitle in subtitles:

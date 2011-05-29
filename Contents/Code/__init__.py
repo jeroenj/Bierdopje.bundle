@@ -30,17 +30,17 @@ class BierdopjeAgentTV(Agent.TV_Shows):
     ))
 
   def update(self, metadata, media, lang):
-    for s in media.seasons:
+    for season in media.seasons:
       # just like in the Local Media Agent, if we have a date-based season skip for now.
-      if int(s) < 1900:
-        for e in media.seasons[s].episodes:
-          for i in media.seasons[s].episodes[e].items:
-            for p in i.parts:
+      if int(season) < 1900:
+        for episode in media.seasons[season].episodes:
+          for item in media.seasons[season].episodes[episode].items:
+            for part in item.parts:
               if Prefs['Language'] == 'both':
-                for l in ['nl', 'en']:
-                  self.find(metadata, s, e, p, l)
+                for language in ['nl', 'en']:
+                  self.find(metadata, season, episode, part, language)
               else:
-                self.find(metadata, s, e, p, Prefs['Language'])
+                self.find(metadata, season, episode, part, Prefs['Language'])
 
   def find(self, metadata, season, episode, part, language):
     subtitles = XML.ElementFromURL(SUBTITLE_URL % (metadata.id, season, episode, language)).xpath('/bierdopje/response/results/result')

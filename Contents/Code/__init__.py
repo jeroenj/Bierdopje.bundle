@@ -96,4 +96,4 @@ class BierdopjeAgentTV(Agent.TV_Shows):
     download_link = subtitle.xpath('downloadlink')[0].text
     key = download_link.split('/apikey/')[0]
     # We use the .srt extension by default. There is no way to see what we get back from the api.
-    part.subtitles[language][key] = Proxy.Media(HTTP.Request(download_link), ext='srt')
+    part.subtitles[language][key] = Proxy.Media(HTTP.Request(download_link, cacheTime=CACHE_1MONTH), ext='srt')

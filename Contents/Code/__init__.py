@@ -41,7 +41,7 @@ class BierdopjeAgentTV(Agent.TV_Shows):
                 self.find(metadata, season, episode, part, Prefs['Language'])
 
   def find(self, metadata, season, episode, part, language):
-    subtitles = XML.ElementFromURL(SUBTITLE_URL % (metadata.id, season, episode, language)).xpath('/bierdopje/response/results/result')
+    subtitles = XML.ElementFromURL(SUBTITLE_URL % (metadata.id, season, episode, language), sleep=1.0).xpath('/bierdopje/response/results/result')
     match = None
     if len(subtitles) > 0:
       for subtitle in subtitles:

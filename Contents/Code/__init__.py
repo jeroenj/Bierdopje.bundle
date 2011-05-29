@@ -16,7 +16,7 @@ def Start():
 
 class BierdopjeAgentTV(Agent.TV_Shows):
   name = 'Bierdopje'
-  languages = [Locale.Language.Dutch]
+  languages = [Locale.Language.Dutch, Locale.Language.English]
   primary_provider = False
   contributes_to = ['com.plexapp.agents.thetvdb']
 

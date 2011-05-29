@@ -95,5 +95,11 @@ class BierdopjeAgentTV(Agent.TV_Shows):
     Log('*** We will use this subtitle: %s' % subtitle.xpath('filename')[0].text)
     download_link = subtitle.xpath('downloadlink')[0].text
     key = download_link.split('/apikey/')[0]
-    # We use the .srt extension by default. There is no way to see what we get back from the api.
-    part.subtitles[language][key] = Proxy.Media(HTTP.Request(download_link, cacheTime=CACHE_1MONTH), ext='srt')
+    request = HTTP.Request(download_link, cacheTime=CACHE_1MONTH)
+    try:
+      ext = re.search('^attachment; filename=.*\.(.+?)$', request.headers['content-disposition']).group(1)
+      Log('*** Found extension %s' % ext)
+    except:
+      ext = 'srt'
+      Log('*** Couldn\'t figure out the file extension, we will use srt.')
+    part.subtitles[language][key] = Proxy.Media(request, ext=ext)

@@ -1,7 +1,5 @@
 import re
 
-NAME = 'Bierdopje'
-
 API_URL = 'http://api.bierdopje.com/%s' % Prefs['ApiKey']
 SHOW_URL = '%s/GetShowByTVDBID/%%s' % API_URL
 SUBTITLE_URL = '%s/GetAllSubsFor/%%s/%%s/%%s/%%s/' % API_URL

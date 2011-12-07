@@ -11,13 +11,13 @@ This is a metadata agent for [Plex](http://plexapp.com) fetches Dutch subtitles 
 
 ## Installation
 
-Download the latest package from the downlaods screen: [Bierdopje-0.0.4.plexapp](https://github.com/downloads/jeroenj/bierdopje-plex-agent/Bierdopje-0.0.4.plexapp)
+Download the latest package from the downlaods screen: [Bierdopje-0.0.4.plexapp](https://github.com/downloads/jeroenj/Bierdopje.bundle/Bierdopje-0.0.4.plexapp)
 
 If that doesn't work for some reason or you want to install it manually, you can clone this repository and copy the Bierdopje.bundle to your `~/Library/Application Support/Plex Media Server/Plug-ins` folder.
 
 ## Todo
 
-This can be found on the [Github issue tracker](https://github.com/jeroenj/bierdopje-plex-agent/issues).
+This can be found on the [Github issue tracker](https://github.com/jeroenj/Bierdopje.bundle/issues).
 
 ## Troubleshooting
 
@@ -27,7 +27,7 @@ It might be possible that the default API key is not working anymore. If you wan
 
 ## Bugs
 
-Please report them on the [Github issue tracker](https://github.com/jeroenj/bierdopje-plex-agent/issues)
+Please report them on the [Github issue tracker](https://github.com/jeroenj/Bierdopje.bundle/issues)
 for this project.
 
 If you have a bug to report, please include the following information:

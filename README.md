@@ -1,3 +1,5 @@
+# WARNING: This plugin is no longer supported since [Bierdopje.com](http://www.bierdopje.com/) no longer provides subtitles.
+
 # Plex metadata agent for Bierdopje.com
 
 This is a metadata agent for [Plex](http://plexapp.com) fetches Dutch subtitles for TV shows from [Bierdopje.com](http://www.bierdopje.com/).
